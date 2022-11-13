@@ -1,19 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 v-text="msg" ref="myRef"></h1>
+    <button @click="showDOM">点击输出DOM元素</button>
+    <!-- 非动态绑定传入的是字符串，动态绑定数据看具体类型 -->
+    <MySchool :name="'Bella'" :address="'Shanghai'" :age="30" />
+    <MyStudent  />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MySchool from "@/components/MySchool.vue";
+import MyStudent from "@/components/MyStudent.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MySchool,
+    MyStudent,
+  },
+  data() {
+    return {
+      msg: "Welcome to learn Vue",
+    };
+  },
+  methods: {
+    showDOM() {
+      console.log(this.$refs.myRef);
+    },
+  },
+};
 </script>
 
 <style>
