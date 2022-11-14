@@ -1,34 +1,12 @@
 <template>
   <div id="app">
-    <h1 v-text="msg" ref="myRef"></h1>
-    <button @click="showDOM">点击输出DOM元素</button>
-    <!-- 非动态绑定传入的是字符串，动态绑定数据看具体类型 -->
-    <MySchool :name="'Bella'" :address="'Shanghai'" :age="30" />
-    <MyStudent  />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-import MySchool from "@/components/MySchool.vue";
-import MyStudent from "@/components/MyStudent.vue";
-export default {
-  name: "App",
-  components: {
-    MySchool,
-    MyStudent,
-  },
-  data() {
-    return {
-      msg: "Welcome to learn Vue",
-    };
-  },
-  methods: {
-    showDOM() {
-      console.log(this.$refs.myRef);
-    },
-  },
-};
-</script>
 
 <style>
 #app {
@@ -37,6 +15,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
