@@ -108,7 +108,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="less" scoped>
 .bar-style {
   width: 100%;
   height: 400px;

@@ -58,8 +58,8 @@ export default {
   },
 };
 </script>
-<style scoped>
-/* .re-select-container {
+<style lang="less" scoped>
+.re-select-container {
   font-size: 1rem;
   .select-trigger {
     height: 100%;
@@ -76,5 +76,5 @@ export default {
   .el-input--suffix .el-input__inner {
     background: transparent !important;
   }
-} */
+}
 </style>
